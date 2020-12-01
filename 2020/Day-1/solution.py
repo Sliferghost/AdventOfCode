@@ -1,14 +1,9 @@
-expenses = []
+from typing import List
 
-with open('expense_report') as file:
-    for expense in file:
-        expenses.append(int(expense.rstrip()))
-
-for outerLoopExpense in expenses:
-    for innerLoopExpense in expenses:
-        if outerLoopExpense == innerLoopExpense:
-            continue
-        if outerLoopExpense + innerLoopExpense == 2020:
-            print(f"Found the expenses: {outerLoopExpense} and {innerLoopExpense}")
-            print(f"Solution = {outerLoopExpense * innerLoopExpense}")
-            exit()
+def findExpenses(expensesReport: List[int], expenseTotal: int) -> int:
+    for firstLoopExpense in expensesReport:
+        for secondLoopExpense in expensesReport:
+            if firstLoopExpense + secondLoopExpense == expenseTotal:
+                print(f"Found the expenses: {firstLoopExpense} and {secondLoopExpense}")
+                print(f"Solution = {firstLoopExpense * secondLoopExpense}")
+                return firstLoopExpense * secondLoopExpense
