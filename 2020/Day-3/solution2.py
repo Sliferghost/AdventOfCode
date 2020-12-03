@@ -35,10 +35,16 @@ def countTreesOnMap(slopeX, slopeY):
 
     return amountOfTrees
 
-totalSlope1 = countTreesOnMap(1, 1)
-totalSlope2 = countTreesOnMap(3, 1)
-totalSlope3 = countTreesOnMap(5, 1)
-totalSlope4 = countTreesOnMap(7, 1)
-totalSlope5 = countTreesOnMap(1, 2)
+slopes = [
+    [1, 1],
+    [3, 1],
+    [5, 1],
+    [7, 1],
+    [1, 2]
+]
+total = 1
 
-print(f"Slopes {totalSlope1 * totalSlope2 * totalSlope3 * totalSlope4 * totalSlope5}")
+for slope in slopes:
+    total *= countTreesOnMap(slope[0], slope[1])
+
+print(f"Solution: {total}")
