@@ -1,4 +1,4 @@
-from solution2 import *
+from validations import validateBirthYear, validateIssueYear, validateExpirationYear, validateHeight, validateHairColor, validateEyeColor, validatePassportID
 
 def test_validateBirthYear_lowerBound():
     assert validateBirthYear("1920") == True
