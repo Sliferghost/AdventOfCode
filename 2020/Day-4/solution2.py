@@ -32,7 +32,7 @@ amountOfValidPassports = 0
 
 for passport in passports:
     properties = {property[0]: property[1] for property in (
-        passportProperty.split(':') for passportProperty in passport.split(' '))}
+        field.split(':') for field in passport.split(' '))}
 
     if all(validation(properties.get(property, None)) for (property, validation) in expectedProperties.items()):
         amountOfValidPassports += 1
